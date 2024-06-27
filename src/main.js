@@ -55,10 +55,16 @@ function createCategories(categories, container) {
 // Llamados a la API
 
 async function getTrendingMoviesPreview() {
-  const { data } = await api('trending/movie/day');
+  const { data } = await api('trending/movie/day'); 
   const movies = data.results;
 
   createMovies(movies, trendingMoviesPreviewList);
+}
+
+async function getTrendingTVPreview() {
+  const { data } = await api('trending/tv/day');
+  const tvs = data.results;
+  console.log(tvs);
 }
 
 async function getCategegoriesPreview() {

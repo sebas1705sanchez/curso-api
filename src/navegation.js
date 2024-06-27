@@ -51,6 +51,28 @@ searchFormBtn.addEventListener('click', () => {
     
     getTrendingMoviesPreview();
     getCategegoriesPreview();
+    console.log('tv');
+    getTrendingTVPreview();
+  }
+  
+  function searchPage() {
+    console.log('Search!!');
+  
+    headerSection.classList.remove('header-container--long');
+    headerSection.style.background = '';
+    arrowBtn.classList.remove('inactive');
+    arrowBtn.classList.remove('header-arrow--white');
+    headerTitle.classList.add('inactive');
+    headerCategoryTitle.classList.add('inactive');
+    searchForm.classList.remove('inactive');
+  
+    trendingPreviewSection.classList.add('inactive');
+    categoriesPreviewSection.classList.add('inactive');
+    genericSection.classList.remove('inactive');
+    movieDetailSection.classList.add('inactive');
+  
+    const [_, query] = location.hash.split('=');
+    getMoviesBySearch(query);
   }
   
   function categoriesPage() {
